@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <menu-container :category="{{ $category }}"></menu-container>
                 </div>
             </div>
         </div>
