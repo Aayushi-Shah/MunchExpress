@@ -27,6 +27,6 @@ class HomeController extends Controller
     {
         $resto_ids = [1];
         $categories = $service->getMenuWithCategory($resto_ids);
-        return view('home')->with('category', $categories);
+        return view('home')->with('menus', $categories);
     }
 }
