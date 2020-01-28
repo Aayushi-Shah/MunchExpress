@@ -23,7 +23,11 @@
                         Add Menu Item
                     </template>
                     <template slot="body">
-                        Form Will Come Here
+                        <menu-add-form
+                        :categories="categories"
+                        :resto-id="restoId"
+                        @newMenuItemAdded="handleNewMenuItem"
+                        ></menu-add-form>
                     </template>
                 </card-component>
             </div>
@@ -34,27 +38,35 @@
 <script>
 import _ from 'lodash';
 import Multiselect from 'vue-multiselect';
-import MenuGroup from './MenuGroups.vue'
+import MenuGroup from './MenuGroups.vue';
+import MenuAddForm from './MenuAddForm';
 export default {
-    props: ['items'],
+    props: ['items', 'restoId'],
     components: {
-        Multiselect, MenuGroup
+        Multiselect, MenuGroup, MenuAddForm
     },
     created() {
         _.forEach(this.items, (item, key)=> {
             this.categories.push(key);
         })
         this.menu = this.categories[0];
+        this.localItems = this.items;
     },
     data() {
         return {
+            localItems: '',
             menu: '',
             categories : []
         }
     },
     computed : {
         currentMenuItems() {
-            return this.items[this.menu]
+            return this.localItems[this.menu]
+        }
+    },
+    methods: {
+        handleNewMenuItem(item, category){
+            this.localItems[category].unshift(item)
         }
     }
 }
