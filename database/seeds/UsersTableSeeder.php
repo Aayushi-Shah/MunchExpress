@@ -12,10 +12,25 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $user = User::create([
             'name' => 'Aayushi Shah',
             'email' => 'aayushi@gmail.com',
             'password' => bcrypt('password')
+        ]);
+
+        $user->resturants()->create([
+            'name'=> 'Highway Street',
+            'location' => 'Bhuvandas Road, NH14 Dadar, Mumbai'
+        ]);
+
+        $user->resturants()->create([
+            'name'=> 'Mainland China',
+            'location' => 'Platinum Tech Park Vashi, Navi Mumbai'
+        ]);
+
+        $user->resturants()->create([
+            'name'=> 'The Machan',
+            'location' => 'Lonavala Lake Road, Lonavala'
         ]);
     }
 }
