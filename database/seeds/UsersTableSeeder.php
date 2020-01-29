@@ -20,17 +20,20 @@ class UsersTableSeeder extends Seeder
 
         $user->resturants()->create([
             'name'=> 'Highway Street',
-            'location' => 'Bhuvandas Road, NH14 Dadar, Mumbai'
+            'location' => 'Bhuvandas Road, NH14 Dadar, Mumbai',
+            'tables' =>10,
         ]);
 
         $user->resturants()->create([
             'name'=> 'Mainland China',
-            'location' => 'Platinum Tech Park Vashi, Navi Mumbai'
+            'location' => 'Platinum Tech Park Vashi, Navi Mumbai',
+            'tables' =>15,
         ]);
 
         $user->resturants()->create([
             'name'=> 'The Machan',
-            'location' => 'Lonavala Lake Road, Lonavala'
+            'location' => 'Lonavala Lake Road, Lonavala',
+            'tables' =>8,
         ]);
     }
 }

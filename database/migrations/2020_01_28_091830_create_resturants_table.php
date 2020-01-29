@@ -17,6 +17,7 @@ class CreateResturantsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('location');
+            $table->bigInteger('tables');
             $table->bigInteger('owner_id')->unsigned();
             $table->timestamps();
 
