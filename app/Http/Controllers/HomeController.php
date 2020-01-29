@@ -26,9 +26,9 @@ class HomeController extends Controller
     public function index(MenuService $service, RestoService $restoService)
     {
         $restoId = 1;
-        $categories = $service->getMenuWithCategory($restoId);
+        $menus = $service->getMenuWithCategory($restoId);
 
         $restos = $restoService->userRestoAndTables();
-        return view('home', compact('categories', 'restoId', 'restos'));
+        return view('home', compact('menus', 'restoId', 'restos'));
     }
 }

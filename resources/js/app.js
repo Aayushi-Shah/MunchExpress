@@ -8,10 +8,15 @@ require('./bootstrap');
 require('vue-multiselect/dist/vue-multiselect.min.css')
 
 import VModal from 'vue-js-modal'
+import Turbolinks from 'turbolinks'
+import TurbolinksAdapter from 'vue-turbolinks';
+
+Turbolinks.start()
 
 window.Vue = require('vue');
 
 Vue.use(VModal);
+Vue.use(TurbolinksAdapter)
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -35,6 +40,9 @@ Vue.component('resto-group', require('./modules/restos/RestoGroup.vue').default)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+document.addEventListener('turbolinks:load', () => {
+    var app = new Vue({
+        el: '#app',
+    });
+  })
+

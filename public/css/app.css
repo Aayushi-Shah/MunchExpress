@@ -11365,3 +11365,7 @@ a.text-dark:focus {
   padding: 10px;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
