@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/resturants', 'ResturantController@index')->name('restos');
-Route::get('/resturants/menu/{id}', 'MenuController@index')->name('restos.menus');
+Route::get('/resturants/menu/{id}', 'MenuController@index')->name('restos.menu');
+// Route::get('/resturants/orders/{id}', 'MenuController@index')->name('restos.menus');
+
 
 

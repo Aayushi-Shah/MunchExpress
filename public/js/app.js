@@ -2332,6 +2332,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -39685,10 +39696,39 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("template", { slot: "body" }, [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(resto.location) +
-                        "\n                "
+                    _c("div", { staticClass: "d-flex align-items-center" }, [
+                      _c("img", {
+                        staticClass: "icon-size m-1",
+                        attrs: { src: "pin.svg" }
+                      }),
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(resto.location) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "d-flex align-items-center" }, [
+                      _c("img", {
+                        staticClass: "icon-size m-1",
+                        attrs: { src: "umbrella.svg" }
+                      }),
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(resto.tables) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "card-link ml-1",
+                        attrs: { href: resto.slug }
+                      },
+                      [_vm._v("Menu")]
                     )
                   ])
                 ],
@@ -39712,9 +39752,20 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("template", { slot: "body" }, [
-                      _c("span", { on: { click: _vm.handleAddNewResturant } }, [
-                        _vm._v("+")
-                      ])
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "d-flex justify-content-center align-items-center"
+                        },
+                        [
+                          _c("img", {
+                            staticClass: "plus-icon-size m-1",
+                            attrs: { src: "more.svg" },
+                            on: { click: _vm.handleAddNewResturant }
+                          })
+                        ]
+                      )
                     ])
                   ],
                   2

@@ -7,7 +7,16 @@
                         {{ resto.name }}
                     </template>
                     <template slot="body">
-                        {{ resto.location }}
+                        <div class="d-flex align-items-center">
+                            <img src="pin.svg" class="icon-size m-1">
+                            {{ resto.location }}
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="umbrella.svg" class="icon-size m-1">
+                            {{ resto.tables }}
+                        </div>
+                        <br>
+                        <a v-bind:href="resto.slug" class="card-link ml-1">Menu</a>
                     </template>
                 </card-component>
             </div>
@@ -15,7 +24,9 @@
                 <card-component>
                     <template slot="title">Add New Resturant</template>
                     <template slot="body">
-                        <span @click="handleAddNewResturant">+</span>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="more.svg" class="plus-icon-size m-1" @click="handleAddNewResturant">
+                        </div>
                     </template>
                 </card-component>
                 <Modal name="add-new-resto" height="400px">

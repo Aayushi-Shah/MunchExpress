@@ -11369,3 +11369,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.icon-size {
+  height: 15px;
+}
+
+.plus-icon-size {
+  height: 70px;
+}
+
