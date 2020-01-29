@@ -9,7 +9,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <menu-container :items="{{ $categories }}" :resto-id="{{ $restoId }}" ></menu-container>
+            <menu-container :items="{{ $menus }}" :resto-id="{{ $restoId }}" ></menu-container>
         </div>
     </div>
 </div>
