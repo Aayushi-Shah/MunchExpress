@@ -17,6 +17,7 @@
                         </div>
                         <br>
                         <a v-bind:href="resto.slug" class="card-link ml-1">Menu</a>
+                        <a v-bind:href="resto.ordersSlug" class="card-link ml-1">Orders</a>
                     </template>
                 </card-component>
             </div>

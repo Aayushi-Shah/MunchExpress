@@ -38,4 +38,14 @@ class MenuController extends Controller
 
         return response()->json($menu, 201);
     }
+
+    public function getRestoMenu(Request $request){
+        $this->validate($request, [
+            'restoId' => 'required|exists:resturants,id'
+        ]);
+        $menuItems = Menu::where('resto_id', $request->input('restoId'))
+        ->orderBy('category_id')
+        ->get();
+        return response()->json($menuItems, 200);
+    }
 }
